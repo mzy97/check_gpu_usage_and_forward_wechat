@@ -45,3 +45,7 @@ Server酱的key获取请参考：
 corntab时间设置请参考：
 
 [https://crontab.guru](https://crontab.guru/)
+
+## 其他
+
+core.py 是一个非常强大的文件，可以从其中取用当前机器所有GPU的状态（显存占用，占用进程的用户，风扇转速等信息），可以使用playground.ipynb进行游玩
