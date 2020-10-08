@@ -1,11 +1,7 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 """
-Implementation of gpustat
-
-@author Jongwook Choi
-@url https://github.com/wookayin/gpustat
+modified from https://github.com/wookayin/gpustat
 """
 
 from __future__ import absolute_import
