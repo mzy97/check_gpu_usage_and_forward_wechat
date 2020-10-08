@@ -1,0 +1,15 @@
+hello world!
+Traceback (most recent call last):
+  File "check_gpu_main.py", line 95, in <module>
+    main()
+  File "check_gpu_main.py", line 92, in main
+    scheduler.start()
+  File "/home/mzy/miniconda3/lib/python3.8/site-packages/apscheduler/schedulers/blocking.py", line 19, in start
+    self._main_loop()
+  File "/home/mzy/miniconda3/lib/python3.8/site-packages/apscheduler/schedulers/blocking.py", line 28, in _main_loop
+    self._event.wait(wait_seconds)
+  File "/home/mzy/miniconda3/lib/python3.8/threading.py", line 558, in wait
+    signaled = self._cond.wait(timeout)
+  File "/home/mzy/miniconda3/lib/python3.8/threading.py", line 306, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
