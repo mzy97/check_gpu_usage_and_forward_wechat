@@ -6,6 +6,7 @@ import logging
 import time
 import argparse
 import os
+from gointernet import *
 
 parser = argparse.ArgumentParser(description='check if gpu is avaliable and notify on your wechat')
 # config args
@@ -13,6 +14,8 @@ parser.add_argument('--key_of_notify', type=str,required=True, help='server jam 
 parser.add_argument('--define_threshold', type=float,default=1000, help='define the threshold of avaliable (in MB)')
 parser.add_argument('--check_freq', type=str,default='*|*|*/10', help='corntab format time, eg. (*|*|*/10)')
 parser.add_argument('--log_file', type=str, default="gpu.log", help='define the threshold of avaliable (in MB)')
+parser.add_argument('--bupt_id', type=str, default="", help='if you used bupt camp internet, input it')
+parser.add_argument('--bupt_passward', type=str, default="", help='if you used bupt camp internet, input it')
 
 
 args = parser.parse_args()
@@ -53,7 +56,11 @@ def job():
     if (len(empty_card) != 0) and (flag):
         current_time = time.strftime('%Y-%m-%d@%H-%M')
         print("send to wechat at {}".format(current_time),flush=True)
-        push_to_wechat(gpu_stats)
+        if check():
+            push_to_wechat(gpu_stats)
+        else:
+            login(args.bupt_id,args.bupt_passward)
+            push_to_wechat(gpu_stats)
         flag = False
 
 
